@@ -15,6 +15,35 @@ int batteryIsOk(float temperature, float soc, float chargeRate) {
   return 1;
 }
 
+void ValidateIfBatteryParameterValueIsLessThanMinOperatingLimit(float minOperatingLimitOfBatteryParameter,  float batteryParameterValue)
+{
+   int ParameterBreachLevel = 0xffff;
+   if(batteryParameterValue < minOperatingLimitOfBatteryParameter)
+   {
+     ParameterBreachLevel =  (minOperatingLimitOfBatteryParameter - batteryParameterValue);
+   }
+   return (ParameterBreachLevel);
+}
+
+void ValidateIfBatteryParameterValueIsGreaterThanMaxOperatingLimit(float maxOperatingLimitOfBatteryParameter,  float batteryParameterValue)
+{
+   int ParameterBreachLevel = 0xffff;
+   if(batteryParameterValue > maxOperatingLimitOfBatteryParameter)
+   {
+      ParameterBreachLevel = (batteryParameterValue - maxOperatingLimitOfBatteryParameter);
+   }
+   return (ParameterBreachLevel);
+}
+
+
+
+void CheckBatteryTemperature()
+{
+  
+}
+
+
+
 int main() {
   assert(batteryIsOk(25, 70, 0.7));
   assert(!batteryIsOk(50, 85, 0));
