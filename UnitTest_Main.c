@@ -22,8 +22,8 @@ void PrintMessageOnConsole_Stub(char messageToBePrinted[])
 int checkBatteryStatus(void)
 {
   float valueRead;
-  void (*Fn_Ptr_PrintMessageOnConsoleWithBreachLevel)(char[], float) = PrintMessageOnConsoleWithBreachLevel_Stub;
-  void (*Fn_Ptr_PrintMessageOnConsole)(char[]) = PrintMessageOnConsole_Stub;
+  void (*Fn_Ptr_PrintMessageOnConsoleWithBreachLevel)(char[], float) = PrintMessageOnConsoleWithBreachLevel;
+  void (*Fn_Ptr_PrintMessageOnConsole)(char[]) = PrintMessageOnConsole;
   int batteryParametersUnderTest = 0;
   int OverallbatteryStatus = 0;
   int batteryStatus = 0;
