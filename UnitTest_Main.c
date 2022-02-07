@@ -31,6 +31,7 @@ int checkBatteryStatus(void)
   void (*Fn_Ptr_PrintMessageOnConsole)(char[]) = PrintMessageOnConsole_Stub;
   int batteryParametersUnderTest = 0;
   int OverallbatteryStatus = 0;
+  int batteryStatus = 0;
   while(batteryParametersUnderTest < MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED)
   {
     valueRead = batteryInputAndValidationDetails[batteryParametersUnderTest].ReadBatteryParameters();
