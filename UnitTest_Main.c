@@ -2,6 +2,7 @@
 #include "BatteryParametersConfiguration.h"
 #include "ParametersReadFromSensor.h"
 #include "BatteryParametersUnderTest.h"
+int checkBatteryStatus(void);
 
 #ifdef UNIT_TEST_ENVIRONMENT
 
@@ -17,12 +18,6 @@ void PrintMessageOnConsole_Stub(char messageToBePrinted[])
 {
   Test_PrintOnConsole++;
 }
-
-int main()
-{
-  checkBatteryStatus();
-}
-
 
 int checkBatteryStatus(void)
 {
@@ -40,6 +35,11 @@ int checkBatteryStatus(void)
     batteryParametersUnderTest++;
   }
   return OverallbatteryStatus;
+}
+
+int main()
+{
+  checkBatteryStatus();
 }
 
 #endif
