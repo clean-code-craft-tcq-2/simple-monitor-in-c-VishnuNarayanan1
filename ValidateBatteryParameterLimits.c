@@ -5,7 +5,7 @@ int ValidateIfBatteryParameterValueIsLessThanMinOperatingLimit(float minOperatin
 {
    int batteryParameterIsInSafeState = 1;
    float ParameterBreachLevel;
-   const char breachMessage[75] = "Battery parameter under test is less than minimum threshold limit by ";
+   char breachMessage[75] = "Battery parameter under test is less than minimum threshold limit by ";
    if(batteryParameterValue < minOperatingLimitOfBatteryParameter)
    {
      batteryParameterIsInSafeState = 0;
@@ -19,7 +19,7 @@ int ValidateIfBatteryParameterValueIsGreaterThanMaxOperatingLimit(float maxOpera
 {
    int batteryParameterIsInSafeState = 1;
    float ParameterBreachLevel;
-   const char breachMessage[75] = "Battery parameter under test is greater than maximum threshold limit by ";
+   char breachMessage[75] = "Battery parameter under test is greater than maximum threshold limit by ";
    if(batteryParameterValue > maxOperatingLimitOfBatteryParameter)
    {
      batteryParameterIsInSafeState = 0;
