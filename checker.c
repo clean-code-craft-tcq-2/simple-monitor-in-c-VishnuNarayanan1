@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
+#include <BatteryPrametersConfiguration.h>
 
 int batteryIsOk(float temperature, float soc, float chargeRate) {
   if(temperature < 0 || temperature > 45) {
@@ -13,33 +14,6 @@ int batteryIsOk(float temperature, float soc, float chargeRate) {
     return 0;
   }
   return 1;
-}
-
-void ValidateIfBatteryParameterValueIsLessThanMinOperatingLimit(float minOperatingLimitOfBatteryParameter,  float batteryParameterValue)
-{
-   int ParameterBreachLevel = 0xffff;
-   if(batteryParameterValue < minOperatingLimitOfBatteryParameter)
-   {
-     ParameterBreachLevel =  (minOperatingLimitOfBatteryParameter - batteryParameterValue);
-   }
-   return (ParameterBreachLevel);
-}
-
-void ValidateIfBatteryParameterValueIsGreaterThanMaxOperatingLimit(float maxOperatingLimitOfBatteryParameter,  float batteryParameterValue)
-{
-   int ParameterBreachLevel = 0xffff;
-   if(batteryParameterValue > maxOperatingLimitOfBatteryParameter)
-   {
-      ParameterBreachLevel = (batteryParameterValue - maxOperatingLimitOfBatteryParameter);
-   }
-   return (ParameterBreachLevel);
-}
-
-
-
-void CheckBatteryTemperature()
-{
-  
 }
 
 
