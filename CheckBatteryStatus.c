@@ -1,11 +1,9 @@
 #include <stdio.h>
 #include "BatteryParametersConfiguration.h"
 
-int CheckBatteryStatus(void)
+int CheckBatteryStatus(void (*Fn_Ptr_PrintMessageOnConsoleWithBreachLevel)(char[], float),void (*Fn_Ptr_PrintMessageOnConsole)(char[]))
 {
   float valueRead;
-  void (*Fn_Ptr_PrintMessageOnConsoleWithBreachLevel)(char[], float) = PrintMessageOnConsoleWithBreachLevel;
-  void (*Fn_Ptr_PrintMessageOnConsole)(char[]) = PrintMessageOnConsole;
   int batteryParametersUnderTest = 0;
   int OverallbatteryStatus = 0;
   int batteryStatus = 0;
