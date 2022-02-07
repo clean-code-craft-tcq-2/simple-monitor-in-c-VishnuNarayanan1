@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "BatteryParametersConfiguration.h"
 #include "BatteryParametersUnderTest.h"
+#include "ValidateBatteryParameterLimits.h"
 
 //---------------------------------------------------------------------------------------------
 /// Battery Temperature under test
