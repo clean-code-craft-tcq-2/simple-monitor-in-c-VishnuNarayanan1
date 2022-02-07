@@ -12,7 +12,7 @@ typedef int (*Fn_Ptr_ValidateBatteryParametersRead)(float, void (*Fn_Ptr_PrintMe
 struct 
 {
   Fn_Ptr_ReadBatteryParameters ReadBatteryParameters;
-  Fn_Ptr_ValidateBatteryParametersRead ValidateBatteryParametersRead
+  Fn_Ptr_ValidateBatteryParametersRead ValidateBatteryParametersRead;
 }batteryParam_st;
 
 extern batteryParam_st batteryInputAndValidationDetails[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED];
