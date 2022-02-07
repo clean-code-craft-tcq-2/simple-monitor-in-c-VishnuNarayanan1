@@ -8,5 +8,5 @@ void PrintMessageOnConsoleWithBreachLevel(char messageToBePrinted[], float breac
 
 void PrintMessageOnConsole(char messageToBePrinted[])
 {
-  printf("%s\n",messageToBePrinted);
+  printf("\n%s\n",messageToBePrinted);
 }
