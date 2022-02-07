@@ -2,6 +2,7 @@
 #include "BatteryParametersConfiguration.h"
 #include "ParametersReadFromSensor.h"
 #include "BatteryParametersUnderTest.h"
+#include "PrintOnConsole.h"
 int checkBatteryStatus(void);
 
 #ifdef UNIT_TEST_ENVIRONMENT
