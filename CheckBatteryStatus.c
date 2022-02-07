@@ -18,11 +18,11 @@ int CheckBatteryStatus(void (*Fn_Ptr_PrintMessageOnConsoleWithBreachLevel)(char[
   }
   if(OverallbatteryStatus)
   {
-     Fn_Ptr_PrintMessage(failureMessage);
+     Fn_Ptr_PrintMessageOnConsole(failureMessage);
   }
   else
   {
-      Fn_Ptr_PrintMessage(successMessage);
+      Fn_Ptr_PrintMessageOnConsole(successMessage);
   }
   return OverallbatteryStatus;
 }
