@@ -3,7 +3,7 @@
 #include "ParametersReadFromSensor.h"
 #include "BatteryParametersUnderTest.h"
 #include "PrintOnConsole.h"
-int checkBatteryStatus(void);
+#include "CheckBatteryStatus.h"
 
 #ifdef UNIT_TEST_ENVIRONMENT
 
@@ -20,30 +20,15 @@ void PrintMessageOnConsole_Stub(char messageToBePrinted[])
   Test_PrintOnConsole++;
 }
 
-int checkBatteryStatus(void)
-{
-  float valueRead;
-  void (*Fn_Ptr_PrintMessageOnConsoleWithBreachLevel)(char[], float) = PrintMessageOnConsoleWithBreachLevel;
-  void (*Fn_Ptr_PrintMessageOnConsole)(char[]) = PrintMessageOnConsole;
-  int batteryParametersUnderTest = 0;
-  int OverallbatteryStatus = 0;
-  int batteryStatus = 0;
-  while(batteryParametersUnderTest < MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED)
-  {
-    valueRead = batteryInputAndValidationDetails[batteryParametersUnderTest].ReadBatteryParameters();
-    batteryStatus = batteryInputAndValidationDetails[batteryParametersUnderTest].ValidateBatteryParametersRead(valueRead,Fn_Ptr_PrintMessageOnConsoleWithBreachLevel,Fn_Ptr_PrintMessageOnConsole);
-    OverallbatteryStatus = (OverallbatteryStatus | batteryStatus);
-    batteryParametersUnderTest++;
-  }
-  return OverallbatteryStatus;
-}
-
 int main()
 {
+  void (*Fn_Ptr_PrintMessageOnConsoleWithBreachLevel)(char[], float) = PrintMessageOnConsoleWithBreachLevel_Stub;
+  void (*Fn_Ptr_PrintMessageOnConsole)(char[]) = PrintMessageOnConsole_Stub;
+  
   TemperatureFromSensorMock = 100;
   SOCFromSensorMock = 30;
   ChargeRateFromSensorMock = 0.9;
-  checkBatteryStatus();
+  CheckBatteryStatus(Fn_Ptr_PrintMessageOnConsoleWithBreachLevel,Fn_Ptr_PrintMessageOnConsole);
 }
 
 #endif
