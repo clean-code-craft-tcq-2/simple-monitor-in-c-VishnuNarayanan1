@@ -2,7 +2,7 @@
 #include "ParametersReadFromSensor.h"
 #include "BatteryParametersUnderTest.h"
 
-batteryParam_st batteryInputAndValidationDetails[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED] =
+struct batteryParam_st batteryInputAndValidationDetails[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED] =
 {
   {.ReadBatteryParameters = &ReadBatteryTemperature, 
    .ValidateBatteryParametersRead = &CheckBatteryTemperature
