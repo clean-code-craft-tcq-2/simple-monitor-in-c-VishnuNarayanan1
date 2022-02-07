@@ -15,4 +15,4 @@ struct batteryParam_st
   Fn_Ptr_ValidateBatteryParametersRead ValidateBatteryParametersRead;
 };
 
-extern batteryParam_st batteryInputAndValidationDetails[];
+extern struct batteryParam_st batteryInputAndValidationDetails[];
