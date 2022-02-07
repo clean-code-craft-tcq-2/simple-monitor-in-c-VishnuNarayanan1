@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "BatteryPrametersConfiguration.h"
+#include "BatteryParametersConfiguration.h"
 #include "BatteryParametersUnderTest.h"
 
 //---------------------------------------------------------------------------------------------
