@@ -9,10 +9,10 @@
 typedef float (*Fn_Ptr_ReadBatteryParameters)(void);
 typedef int (*Fn_Ptr_ValidateBatteryParametersRead)(float, void (*Fn_Ptr_PrintMessage)(const char[]),void (*Fn_Ptr_PrintMessageWithBreachLevel)(const char[],float));
 
-struct 
+struct batteryParam_st 
 {
   Fn_Ptr_ReadBatteryParameters ReadBatteryParameters;
   Fn_Ptr_ValidateBatteryParametersRead ValidateBatteryParametersRead;
-}batteryParam_st;
+};
 
 extern batteryParam_st batteryInputAndValidationDetails[];
