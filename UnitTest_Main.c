@@ -27,8 +27,8 @@ int main()
 int checkBatteryStatus(void)
 {
   float valueRead;
-  void Fn_Ptr_PrintMessageOnConsoleWithBreachLevel(char[], float) = PrintMessageOnConsoleWithBreachLevel_Stub;
-  void Fn_Ptr_PrintMessageOnConsole(char[]) = PrintMessageOnConsole_Stub;
+  void (*Fn_Ptr_PrintMessageOnConsoleWithBreachLevel)(char[], float) = PrintMessageOnConsoleWithBreachLevel_Stub;
+  void (*Fn_Ptr_PrintMessageOnConsole)(char[]) = PrintMessageOnConsole_Stub;
   int batteryParametersUnderTest = 0;
   int OverallbatteryStatus = 0;
   for(batteryParametersUnderTest < MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED)
