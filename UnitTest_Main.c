@@ -39,6 +39,9 @@ int checkBatteryStatus(void)
 
 int main()
 {
+  TemperatureFromSensorMock = 100;
+  SOCFromSensorMock = 30;
+  ChargeRateFromSensorMock = 0.9;
   checkBatteryStatus();
 }
 
