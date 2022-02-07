@@ -13,4 +13,4 @@ struct batteryParam_st batteryInputAndValidationDetails[MAX_BATTERY_PARAMETERS_T
   {.ReadBatteryParameters = &ReadBateryChargeRate,
    .ValidateBatteryParametersRead = &CheckBatteryChargeRate
    }
-}
+};
