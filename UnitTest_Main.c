@@ -35,7 +35,7 @@ int checkBatteryStatus(void)
   while(batteryParametersUnderTest < MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED)
   {
     valueRead = batteryInputAndValidationDetails[batteryParametersUnderTest].ReadBatteryParameters();
-    batteryStatus = batteryInputAndValidationDetails[batteryParametersUnderTest].ValidateBatteryParametersRead(valueRead,Fn_Ptr_PrintMessageOnConsole,Fn_Ptr_PrintMessageOnConsoleWithBreachLevel);
+    batteryStatus = batteryInputAndValidationDetails[batteryParametersUnderTest].ValidateBatteryParametersRead(valueRead,Fn_Ptr_PrintMessageOnConsoleWithBreachLevel,Fn_Ptr_PrintMessageOnConsole);
     OverallbatteryStatus = (OverallbatteryStatus | batteryStatus);
     batteryParametersUnderTest++;
   }
