@@ -15,4 +15,4 @@ struct
   Fn_Ptr_ValidateBatteryParametersRead ValidateBatteryParametersRead;
 }batteryParam_st;
 
-extern batteryParam_st batteryInputAndValidationDetails[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED];
+extern batteryParam_st batteryInputAndValidationDetails[];
