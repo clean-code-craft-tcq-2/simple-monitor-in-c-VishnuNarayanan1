@@ -6,8 +6,8 @@
 #define MAX_THRESHOLD_LIMIT_BATTERY_CHARGE_RATE         (0.8)
 #define MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED          (3)
 
-float (*Fn_Ptr_ReadBatteryParameters)(void);
-int (*Fn_Ptr_ValidateBatteryParametersRead)(float, void (*Fn_Ptr_PrintMessage)(const char[]),void (*Fn_Ptr_PrintMessageWithBreachLevel)(const char[],float));
+typedef float (*Fn_Ptr_ReadBatteryParameters)(void);
+typedef int (*Fn_Ptr_ValidateBatteryParametersRead)(float, void (*Fn_Ptr_PrintMessage)(const char[]),void (*Fn_Ptr_PrintMessageWithBreachLevel)(const char[],float));
 
 struct 
 {
