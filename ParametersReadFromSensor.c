@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "ParametersReadFromSensor.h"
 
 float TemperatureFromSensorMock;
 float SOCFromSensorMock;
