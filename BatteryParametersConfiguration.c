@@ -1,4 +1,5 @@
 #include <BatteryParametersConfiguration.h>
+#include <ParametersReadFromSensor.h>
 
 batteryParam_st batteryInputAndValidationDetails[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED] =
 {
