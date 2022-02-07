@@ -8,12 +8,12 @@
 int Test_PrintOnConsoleWithBreachLevel = 0;
 int Test_PrintOnConsole = 0;
 
-void PrintMessageOnConsoleWithBreachLevel_Stub(const char messageToBePrinted[], float breachLevel)
+void PrintMessageOnConsoleWithBreachLevel_Stub(char messageToBePrinted[], float breachLevel)
 {
   Test_PrintOnConsoleWithBreachLevel++;
 }
 
-void PrintMessageOnConsole_Stub(const char messageToBePrinted[])
+void PrintMessageOnConsole_Stub(char messageToBePrinted[])
 {
   Test_PrintOnConsole++;
 }
@@ -27,8 +27,8 @@ int main()
 int checkBatteryStatus(void)
 {
   float valueRead;
-  void (*Fn_Ptr_PrintMessageOnConsoleWithBreachLevel)(const char[], float) = PrintMessageOnConsoleWithBreachLevel_Stub;
-  void (*Fn_Ptr_PrintMessageOnConsole)(const char[]) = PrintMessageOnConsole_Stub;
+  void (*Fn_Ptr_PrintMessageOnConsoleWithBreachLevel)(char[], float) = PrintMessageOnConsoleWithBreachLevel_Stub;
+  void (*Fn_Ptr_PrintMessageOnConsole)(char[]) = PrintMessageOnConsole_Stub;
   int batteryParametersUnderTest = 0;
   int OverallbatteryStatus = 0;
   int batteryStatus = 0;
