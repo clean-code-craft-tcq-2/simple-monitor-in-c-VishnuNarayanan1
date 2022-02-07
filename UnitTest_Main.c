@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include <BatteryParametersConfiguration.h>
-#include <ParametersReadFromSensor.h>
-#include <BatteryParametersUnderTest.h>
+#include "BatteryParametersConfiguration.h"
+#include "ParametersReadFromSensor.h"
+#include "BatteryParametersUnderTest.h"
 
 #ifdef UNIT_TEST_ENVIRONMENT
 
