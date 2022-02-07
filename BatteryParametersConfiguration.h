@@ -7,7 +7,7 @@
 #define MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED          (3)
 
 typedef float (*Fn_Ptr_ReadBatteryParameters)(void);
-typedef int (*Fn_Ptr_ValidateBatteryParametersRead)(float, , void (*Fn_Ptr_PrintMessage)(char[]) ,void (*Fn_Ptr_PrintMessageWithBreachLevel)(char[],float));
+typedef int (*Fn_Ptr_ValidateBatteryParametersRead)(float, , void (*Fn_Ptr_PrintMessageWithBreachLevel)(char[],float), void (*Fn_Ptr_PrintMessage)(char[]));
 
 struct batteryParam_st 
 {
