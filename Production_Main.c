@@ -1,13 +1,16 @@
 #ifdef PRODUCTION_ENVIRONMENT
 #include <stdio.h>
-#include <BatteryPrametersConfiguration.h>
-#include <PrintOnConsole.h>
+#include "BatteryPrametersConfiguration.h"
+#include "PrintOnConsole.h"
+#include "CheckBatteryStatus.h"
 
 int main()
 {
+  void (*Fn_Ptr_PrintMessageOnConsoleWithBreachLevel)(char[], float) = PrintMessageOnConsoleWithBreachLevel;
+  void (*Fn_Ptr_PrintMessageOnConsole)(char[]) = PrintMessageOnConsole;
     while(1)
     {   
-        if(!CheckBatteryStatus())
+        if(!CheckBatteryStatus(Fn_Ptr_PrintMessageOnConsoleWithBreachLevel,Fn_Ptr_PrintMessageOnConsole))
         {
         }
         else
@@ -16,21 +19,3 @@ int main()
         }    
     }
 }
-
-
-int checkBatteryStatus(void)
-{
-  float valueRead;
-  void Fn_Ptr_PrintMessageOnConsoleWithBreachLevel(char[], float) = PrintMessageOnConsoleWithBreachLevel;
-  void Fn_Ptr_PrintMessageOnConsole(char[]) = PrintMessageOnConsole;
-  int batteryParametersUnderTest = 0;
-  int OverallbatteryStatus = 0;
-  for(batteryParametersUnderTest < MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED)
-  {
-    valueRead = batteryInputAndValidationDetails[batteryParametersUnderTest].ReadBatteryParameters();
-    batteryStatus = batteryInputAndValidationDetails[batteryParametersUnderTest].ValidateBatteryParametersRead(valueRead,Fn_Ptr_PrintMessageOnConsoleWithBreachLevel,Fn_Ptr_PrintMessageOnConsole);
-    OverallbatteryStatus = (OverallbatteryStatus | batteryStatus);
-  }
-  return OverallbatteryStatus;
-}
-#endif
