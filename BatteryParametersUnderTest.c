@@ -7,7 +7,7 @@
 /// Battery Temperature under test
 ///
 //---------------------------------------------------------------------------------------------
-int CheckBatteryTemperature(float measuredTemperatureValueUnderTest, void (*Fn_Ptr_PrintMessage)(char[]),void (*Fn_Ptr_PrintMessageWithBreachLevel)(char[],float) )
+int CheckBatteryTemperature(float measuredTemperatureValueUnderTest,void (*Fn_Ptr_PrintMessageWithBreachLevel)(char[],float), void (*Fn_Ptr_PrintMessage)(char[]))
 {
   int batteryTemperatureStatus = 1;
   char message[75] = "Battery parameter under test is Temperature";
@@ -25,7 +25,7 @@ int CheckBatteryTemperature(float measuredTemperatureValueUnderTest, void (*Fn_P
 /// Battery State Of Charge under test
 ///
 //---------------------------------------------------------------------------------------------
-int CheckBatteryStateOfCharge(float measuredStateOfChargeUnderTest, void (*Fn_Ptr_PrintMessage)(char[]),void (*Fn_Ptr_PrintMessageWithBreachLevel)(char[],float) )
+int CheckBatteryStateOfCharge(float measuredStateOfChargeUnderTest,void (*Fn_Ptr_PrintMessageWithBreachLevel)(char[],float), void (*Fn_Ptr_PrintMessage)(char[]))
 {
   int batteryStateOfChargeStatus = 1;
   char message[75] = "Battery parameter under test is State Of Charge (SOC)";
@@ -43,7 +43,7 @@ int CheckBatteryStateOfCharge(float measuredStateOfChargeUnderTest, void (*Fn_Pt
 /// Battery Charge rate under test
 ///
 //---------------------------------------------------------------------------------------------
-int CheckBatteryChargeRate(float measuredChargeRateUnderTest, void (*Fn_Ptr_PrintMessage)(char[]),void (*Fn_Ptr_PrintMessageWithBreachLevel)(char[],float) )
+int CheckBatteryChargeRate(float measuredChargeRateUnderTest,void (*Fn_Ptr_PrintMessageWithBreachLevel)(char[],float), void (*Fn_Ptr_PrintMessage)(char[]))
 {
   int batteryChargeRateStatus = 1;
   char message[75] = "Battery parameter under test is Charge rate";
