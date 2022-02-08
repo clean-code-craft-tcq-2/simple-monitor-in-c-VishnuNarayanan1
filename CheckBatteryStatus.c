@@ -9,8 +9,8 @@ int CheckBatteryStatus(void (*Fn_Ptr_PrintMessageOnConsoleWithBreachLevel)(char[
   int batteryParametersUnderTest = 0;
   int OverallbatteryStatus = 0;
   int batteryStatus = 0;
-  char successMessage[75] = "Battery status is safe";
-  char failureMessage[75] = "Battery status is unsafe, call service person";
+  char successMessage[75] = "Battery status is safe !!!";
+  char failureMessage[75] = "Battery status is unsafe, call service person !!!";
   char messageToBePrinted[100];
   while(batteryParametersUnderTest < MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED)
   {
