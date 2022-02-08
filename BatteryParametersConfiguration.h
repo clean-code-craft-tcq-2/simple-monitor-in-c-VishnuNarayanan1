@@ -6,6 +6,7 @@
 #define MIN_THRESHOLD_LIMIT_BATTERY_CHARGE_RATE         (0.2)
 #define MAX_THRESHOLD_LIMIT_BATTERY_CHARGE_RATE         (0.8)
 #define MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED          (3)
+#define BREACH_LEVEL_NEED_NOT_BE_PRINTED                (0xffffff)
 
 typedef float (*Fn_Ptr_ReadBatteryParameters)(void);
 typedef int (*Fn_Ptr_ValidateBatteryParametersRead)(float,void (*Fn_Ptr_PrintMessageWithBreachLevel)(char[],float), void (*Fn_Ptr_PrintMessage)(char[]));
