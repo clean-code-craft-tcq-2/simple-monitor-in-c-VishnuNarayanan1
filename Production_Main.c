@@ -7,10 +7,9 @@
 int main()
 {
   void (*Fn_Ptr_PrintMessageOnConsoleWithBreachLevel)(char[], float) = PrintMessageOnConsoleWithBreachLevel;
-  void (*Fn_Ptr_PrintMessageOnConsole)(char[]) = PrintMessageOnConsole;
-    while(1)
+   while(1)
     {   
-        if(!CheckBatteryStatus(Fn_Ptr_PrintMessageOnConsoleWithBreachLevel,Fn_Ptr_PrintMessageOnConsole))
+        if(!CheckBatteryStatus(Fn_Ptr_PrintMessageOnConsoleWithBreachLevel))
         {
         }
         else
