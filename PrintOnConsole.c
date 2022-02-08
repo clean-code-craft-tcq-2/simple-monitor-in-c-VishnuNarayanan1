@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "PrintOnConsole.h"
+#include "BatteryParametersConfiguration.h"
 
 void PrintMessageOnConsoleWithBreachLevel(char messageToBePrinted[], float breachLevel)
 {
