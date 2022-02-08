@@ -3,7 +3,7 @@
 #include "BatteryParametersConfiguration.h"
 #include "BatteryParametersUnderTest.h"
 
-int CheckBatteryStatus(void (*Fn_Ptr_PrintMessageOnConsoleWithBreachLevel)(char[], float),void (*Fn_Ptr_PrintMessageOnConsole)(char[]))
+int CheckBatteryStatus(void (*Fn_Ptr_PrintMessageOnConsoleWithBreachLevel)(char[], float))
 {
   float valueRead;
   int batteryParametersUnderTest = 0;
@@ -17,7 +17,7 @@ int CheckBatteryStatus(void (*Fn_Ptr_PrintMessageOnConsoleWithBreachLevel)(char[
     strcpy(messageToBePrinted, messageToBePrintedForBatteryParameterValidation[batteryParametersUnderTest]);
     valueRead = batteryInputAndValidationDetails[batteryParametersUnderTest].ReadBatteryParameters();
     batteryStatus = CheckBatteryParameterLimits(messageToBePrinted, valueRead, batteryInputAndValidationDetails[batteryParametersUnderTest].MinimumThresholdLimit,
-                                                batteryInputAndValidationDetails[batteryParametersUnderTest].MaximumThresholdLimit,Fn_Ptr_PrintMessageOnConsoleWithBreachLevel,Fn_Ptr_PrintMessageOnConsole);
+                                                batteryInputAndValidationDetails[batteryParametersUnderTest].MaximumThresholdLimit,Fn_Ptr_PrintMessageOnConsoleWithBreachLevel);
     OverallbatteryStatus = (OverallbatteryStatus | batteryStatus);
     batteryParametersUnderTest++;
   }
