@@ -9,15 +9,12 @@
 #define BREACH_LEVEL_NEED_NOT_BE_PRINTED                (0xffffff)
 
 typedef float (*Fn_Ptr_ReadBatteryParameters)(void);
-typedef int (*Fn_Ptr_ValidateBatteryParametersRead)(float,void (*Fn_Ptr_PrintMessageWithBreachLevel)(char[],float), void (*Fn_Ptr_PrintMessage)(char[]));
 
 struct batteryParam_st 
 {
   float MinimumThresholdLimit;
   float MaximumThresholdLimit;
-  Fn_Ptr_ReadBatteryParameters ReadBatteryParameters;
-  Fn_Ptr_ValidateBatteryParametersRead ValidateBatteryParametersRead;
-  
+  Fn_Ptr_ReadBatteryParameters ReadBatteryParameters;  
 };
 
 extern struct batteryParam_st batteryInputAndValidationDetails[];
