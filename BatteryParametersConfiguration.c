@@ -26,4 +26,4 @@ char messageToBePrintedForBatteryParameterValidation[MAX_BATTERY_PARAMETERS_TO_B
   "Battery parameter under test is Temperature",
   "Battery parameter under test is State Of Charge (SOC)",
   "Battery parameter under test is Charge rate"
-}
+};
