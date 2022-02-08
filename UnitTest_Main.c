@@ -7,7 +7,8 @@
 #include "CheckBatteryStatus.h"
 
 #ifdef UNIT_TEST_ENVIRONMENT
-void Test_BatteryStatus(float temperature, float SOC , float ChargeRate, int batteryStatusToAssert, int NumOfPrintMessagesToAssert);
+
+void Test_BatteryStatus(float temperature, float SOC , float ChargeRate, int batteryStatusToAssert, int NumOfPrintMessagesWithBreachToAssert, int NumOfPrintMessagesToAssert);
 
 int Test_PrintOnConsoleWithBreachLevel = 0;
 int Test_PrintOnConsole = 0;
@@ -27,14 +28,14 @@ void PrintMessageOnConsole_Stub(char messageToBePrinted[])
 int main()
 {
   // Test if temperature, SOC and charge rate are within permissible range
-   Test_BatteryStatus(25,50,0.5,0,4); 
+   Test_BatteryStatus(25,50,0.5,0,0,4); 
    // Test if temperature, SOC and charge rate all are in the upper boundary of the permissible range 
-   Test_BatteryStatus(45,80,0.8,0,4);
+   Test_BatteryStatus(45,80,0.8,0,0,8);
    // Test if temperature, SOC and charge rate all are in the lower boundary of the permissible range 
-   Test_BatteryStatus(0,20,0.8,0,4);
+   Test_BatteryStatus(0,20,0.8,0,0,12);
 }
 
-void Test_BatteryStatus(float temperature, float SOC , float ChargeRate, int batteryStatusToAssert, int NumOfPrintMessagesToAssert)
+void Test_BatteryStatus(float temperature, float SOC , float ChargeRate, int batteryStatusToAssert, int NumOfPrintMessagesWithBreachToAssert, int NumOfPrintMessagesToAssert)
 {
   int batteryStatus;
   void (*Fn_Ptr_PrintMessageOnConsoleWithBreachLevel)(char[], float) = PrintMessageOnConsoleWithBreachLevel_Stub;
@@ -45,7 +46,7 @@ void Test_BatteryStatus(float temperature, float SOC , float ChargeRate, int bat
   batteryStatus = CheckBatteryStatus(Fn_Ptr_PrintMessageOnConsoleWithBreachLevel,Fn_Ptr_PrintMessageOnConsole);
   assert(batteryStatus == batteryStatusToAssert);
   printf("\n%d",Test_PrintOnConsoleWithBreachLevel);
-   printf("\n%d",Test_PrintOnConsole);
- // assert(NumOfPrintMessagesToAssert == Test_PrintOnConsoleWithBreachLevel)
+  printf("\n%d",Test_PrintOnConsole);
+  assert(NumOfPrintMessagesToAssert == Test_PrintOnConsoleWithBreachLevel)
 }
 #endif
