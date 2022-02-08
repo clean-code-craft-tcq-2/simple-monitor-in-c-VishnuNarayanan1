@@ -3,10 +3,12 @@
 
 void PrintMessageOnConsoleWithBreachLevel(char messageToBePrinted[], float breachLevel)
 {
-  printf("%s %.1f",messageToBePrinted,breachLevel);
-}
-
-void PrintMessageOnConsole(char messageToBePrinted[])
-{
-  printf("\n%s\n",messageToBePrinted);
+  if(breachLevel == BREACH_LEVEL_NEED_NOT_BE_PRINTED)
+  {
+      printf("\n%s\n",messageToBePrinted);
+  }
+  else
+  {
+    printf("%s %.1f",messageToBePrinted,breachLevel);
+  }
 }
