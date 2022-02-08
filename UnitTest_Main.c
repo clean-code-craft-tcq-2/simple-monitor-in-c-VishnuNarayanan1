@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <assert.h>
 #include "BatteryParametersConfiguration.h"
 #include "ParametersReadFromSensor.h"
 #include "BatteryParametersUnderTest.h"
@@ -6,6 +7,7 @@
 #include "CheckBatteryStatus.h"
 
 #ifdef UNIT_TEST_ENVIRONMENT
+void Test_BatteryStatus(float temperature, float SOC , float ChargeRate, int batteryStatusToAssert, int NumOfPrintMessagesToAssert);
 
 int Test_PrintOnConsoleWithBreachLevel = 0;
 int Test_PrintOnConsole = 0;
