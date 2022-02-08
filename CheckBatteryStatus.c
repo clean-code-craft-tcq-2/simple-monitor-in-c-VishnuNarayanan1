@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "BatteryParametersConfiguration.h"
 
 int CheckBatteryStatus(void (*Fn_Ptr_PrintMessageOnConsoleWithBreachLevel)(char[], float),void (*Fn_Ptr_PrintMessageOnConsole)(char[]))
@@ -12,7 +13,8 @@ int CheckBatteryStatus(void (*Fn_Ptr_PrintMessageOnConsoleWithBreachLevel)(char[
   while(batteryParametersUnderTest < MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED)
   {
     valueRead = batteryInputAndValidationDetails[batteryParametersUnderTest].ReadBatteryParameters();
-    batteryStatus = batteryInputAndValidationDetails[batteryParametersUnderTest].ValidateBatteryParametersRead(valueRead,Fn_Ptr_PrintMessageOnConsoleWithBreachLevel,Fn_Ptr_PrintMessageOnConsole);
+    batteryStatus = CheckBatteryParameterLimits(messageToBePrintedForBatteryParameterValidation[batteryParametersUnderTest] , valueRead, batteryInputAndValidationDetails[batteryParametersUnderTest].MinimumThresholdLimit,
+                                                batteryInputAndValidationDetails[batteryParametersUnderTest].MaximumThresholdLimit,Fn_Ptr_PrintMessageOnConsoleWithBreachLevel,Fn_Ptr_PrintMessageOnConsole)
     OverallbatteryStatus = (OverallbatteryStatus | batteryStatus);
     batteryParametersUnderTest++;
   }
