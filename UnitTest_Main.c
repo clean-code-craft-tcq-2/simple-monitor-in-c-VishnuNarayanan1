@@ -24,14 +24,26 @@ void PrintMessageOnConsole_Stub(char messageToBePrinted[])
 
 int main()
 {
-  void (*Fn_Ptr_PrintMessageOnConsoleWithBreachLevel)(char[], float) = PrintMessageOnConsoleWithBreachLevel_Stub;
-  void (*Fn_Ptr_PrintMessageOnConsole)(char[]) = PrintMessageOnConsole_Stub;
-  
-  TemperatureFromSensorMock = 25;
-  SOCFromSensorMock = 30;
-  ChargeRateFromSensorMock = 0.7;
-  
-  CheckBatteryStatus(Fn_Ptr_PrintMessageOnConsoleWithBreachLevel,Fn_Ptr_PrintMessageOnConsole);
+  // Test if temperature, SOC and charge rate are within permissible range
+   Test_BatteryStatus(25,50,0.5,0,4); 
+   // Test if temperature, SOC and charge rate all are in the upper boundary of the permissible range 
+   Test_BatteryStatus(45,80,0.8,0,4);
+   // Test if temperature, SOC and charge rate all are in the lower boundary of the permissible range 
+   Test_BatteryStatus(0,20,0.8,0,4);
 }
 
+void Test_BatteryStatus(float temperature, float SOC , float ChargeRate, int batteryStatusToAssert, int NumOfPrintMessagesToAssert)
+{
+  int batteryStatus;
+  void (*Fn_Ptr_PrintMessageOnConsoleWithBreachLevel)(char[], float) = PrintMessageOnConsoleWithBreachLevel_Stub;
+  void (*Fn_Ptr_PrintMessageOnConsole)(char[]) = PrintMessageOnConsole_Stub;
+  TemperatureFromSensorMock = temperature;
+  SOCFromSensorMock = SOC;
+  ChargeRateFromSensorMock = ChargeRate;
+  batteryStatus = CheckBatteryStatus(Fn_Ptr_PrintMessageOnConsoleWithBreachLevel,Fn_Ptr_PrintMessageOnConsole);
+  assert(batteryStatus == batteryStatusToAssert);
+  printf("\n%d",Test_PrintOnConsoleWithBreachLevel);
+   printf("\n%d",Test_PrintOnConsole);
+ // assert(NumOfPrintMessagesToAssert == Test_PrintOnConsoleWithBreachLevel)
+}
 #endif
