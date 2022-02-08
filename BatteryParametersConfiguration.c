@@ -7,17 +7,14 @@ struct batteryParam_st batteryInputAndValidationDetails[MAX_BATTERY_PARAMETERS_T
   {.MinimumThresholdLimit = MIN_THRESHOLD_LIMIT_BATTERY_TEMPERATURE,
    .MaximumThresholdLimit = MAX_THRESHOLD_LIMIT_BATTERY_TEMPERATURE,
     .ReadBatteryParameters = &ReadBatteryTemperature, 
-   .ValidateBatteryParametersRead = &CheckBatteryTemperature
    },
   {.MinimumThresholdLimit = MIN_THRESHOLD_LIMIT_BATTERY_STATE_OF_CHARGE,
    .MaximumThresholdLimit = MAX_THRESHOLD_LIMIT_BATTERY_STATE_OF_CHARGE,
-    .ReadBatteryParameters = &ReadBatteryStateOfCharge,
-   .ValidateBatteryParametersRead = &CheckBatteryStateOfCharge
+   .ReadBatteryParameters = &ReadBatteryStateOfCharge,
    },
   { .MinimumThresholdLimit = MIN_THRESHOLD_LIMIT_BATTERY_TEMPERATURE,
     .MaximumThresholdLimit = MAX_THRESHOLD_LIMIT_BATTERY_CHARGE_RATE,
     .ReadBatteryParameters = &ReadBateryChargeRate,
-   .ValidateBatteryParametersRead = &CheckBatteryChargeRate
    }
 };
 
