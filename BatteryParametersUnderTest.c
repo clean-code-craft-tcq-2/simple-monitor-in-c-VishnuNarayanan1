@@ -4,11 +4,10 @@
 #include "ValidateBatteryParameterLimits.h"
 
 
-int CheckBatteryParameterLimits(char message[],float measuredTemperatureValueUnderTest,float minLimit, float maxLimit, 
-                                void (*Fn_Ptr_PrintMessageWithBreachLevel)(char[],float), void (*Fn_Ptr_PrintMessage)(char[]))
+int CheckBatteryParameterLimits(char message[],float measuredTemperatureValueUnderTest,float minLimit, float maxLimit, void (*Fn_Ptr_PrintMessageWithBreachLevel)(char[],float))
 {
   int batteryParameterStatus = 1;
-  Fn_Ptr_PrintMessage(message);
+  Fn_Ptr_PrintMessageWithBreachLevel(message,BREACH_LEVEL_NEED_NOT_BE_PRINTED);
   if(ValidateIfBatteryParameterValueIsLessThanMinOperatingLimit(minLimit,measuredTemperatureValueUnderTest,Fn_Ptr_PrintMessageWithBreachLevel) 
     && ValidateIfBatteryParameterValueIsGreaterThanMaxOperatingLimit(maxLimit,measuredTemperatureValueUnderTest,Fn_Ptr_PrintMessageWithBreachLevel))
   {
