@@ -15,7 +15,7 @@ int Test_PrintOnConsole = 0;
 
 void PrintMessageOnConsoleWithBreachLevel_Stub(char messageToBePrinted[], float breachLevel)
 {
-  printf("%s %.1f",messageToBePrinted,breachLevel);
+  printf("\n%s %.1f\n",messageToBePrinted,breachLevel);
   Test_PrintOnConsoleWithBreachLevel++;
 }
 
