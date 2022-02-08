@@ -15,14 +15,17 @@ int Test_PrintOnConsole = 0;
 
 void PrintMessageOnConsoleWithBreachLevel_Stub(char messageToBePrinted[], float breachLevel)
 {
-  printf("\n%s %.1f\n",messageToBePrinted,breachLevel);
-  Test_PrintOnConsoleWithBreachLevel++;
-}
+  if(breachLevel == BREACH_LEVEL_NEED_NOT_BE_PRINTED)
+  {
+      printf("\n%s\n",messageToBePrinted);
+      Test_PrintOnConsole++;
+  }
+  else
+  {
+      printf("\n%s %.1f\n",messageToBePrinted,breachLevel);
+     Test_PrintOnConsoleWithBreachLevel++;
+  }
 
-void PrintMessageOnConsole_Stub(char messageToBePrinted[])
-{
-  printf("\n%s\n",messageToBePrinted);
-  Test_PrintOnConsole++;
 }
 
 int main()
@@ -51,11 +54,10 @@ void Test_BatteryStatus(float temperature, float SOC , float ChargeRate, int bat
 {
   int batteryStatus;
   void (*Fn_Ptr_PrintMessageOnConsoleWithBreachLevel)(char[], float) = PrintMessageOnConsoleWithBreachLevel_Stub;
-  void (*Fn_Ptr_PrintMessageOnConsole)(char[]) = PrintMessageOnConsole_Stub;
   TemperatureFromSensorMock = temperature;
   SOCFromSensorMock = SOC;
   ChargeRateFromSensorMock = ChargeRate;
-  batteryStatus = CheckBatteryStatus(Fn_Ptr_PrintMessageOnConsoleWithBreachLevel,Fn_Ptr_PrintMessageOnConsole);
+  batteryStatus = CheckBatteryStatus(Fn_Ptr_PrintMessageOnConsoleWithBreachLevel);
   assert(batteryStatus == batteryStatusToAssert);
   printf("\n%d\n",Test_PrintOnConsoleWithBreachLevel);
    printf("\n%d\n",Test_PrintOnConsole);
