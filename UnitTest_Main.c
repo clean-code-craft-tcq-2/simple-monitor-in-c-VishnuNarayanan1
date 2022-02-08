@@ -41,7 +41,7 @@ int main()
    // Test if SOC is below the lower boundary of the permissible range , temperature and charge rate are within permissible range
    Test_BatteryStatus(25,10,0.5,1,2,20);
    // Test if charge rate is below the lower boundary of the permissible range , temperature and SOC are within permissible range
-   Test_BatteryStatus(25,50,0.1,1,3,24);
+   Test_BatteryStatus(25,50,0,1,3,24);
     // Test if temperature and SOC are below the lower boundary of the permissible range , charge rate is within permissible range
    Test_BatteryStatus(-20,-10,0.5,1,5,28);
    // Test if SOC and charge rate are below the lower boundary of the permissible range , temperature is within permissible range
