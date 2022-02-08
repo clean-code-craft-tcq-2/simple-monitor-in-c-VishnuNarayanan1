@@ -37,10 +37,14 @@ int main()
    Test_BatteryStatus(-10,20,0.5,1,1,16);
    // Test if SOC is below the lower boundary of the permissible range , temperature and charge rate are within permissible range
    Test_BatteryStatus(25,10,0.5,1,2,20);
-   // Test if charge rate is below the lower boundary of the permissible range , temperature and SOC are within permissible range
+   // Test if charge rate is beyond the boundary of the permissible range , temperature and SOC are within permissible range
    Test_BatteryStatus(25,50,1,1,3,24);
-     // Test if temperature and SOC are below the lower boundary of the permissible range , charge rate is within permissible range
+    // Test if temperature and SOC are beyond the lower boundary of the permissible range , charge rate is within permissible range
    Test_BatteryStatus(-20,-10,0.5,1,5,28);
+   // Test if SOC and charge rate are beyond the boundary of the permissible range , temperature is within permissible range
+   Test_BatteryStatus(25,-10,0.9,1,7,32);
+    // Test if temperature and charge rate are beyond the boundary of the permissible range , SOC is within permissible range
+   Test_BatteryStatus(-1,50,1,1,9,36);
 }
 
 void Test_BatteryStatus(float temperature, float SOC , float ChargeRate, int batteryStatusToAssert, int NumOfPrintMessagesWithBreachToAssert, int NumOfPrintMessagesToAssert)
