@@ -2,7 +2,7 @@
 #include "ParametersReadFromSensor.h"
 #include "BatteryParametersUnderTest.h"
 
-struct batteryParam_st batteryInputAndValidationDetails[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED] =
+struct batteryParam_st batteryParamInfo[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED] =
 {
   {.MinimumThresholdLimit = MIN_THRESHOLD_LIMIT_BATTERY_TEMPERATURE,
    .MaximumThresholdLimit = MAX_THRESHOLD_LIMIT_BATTERY_TEMPERATURE,
@@ -24,7 +24,7 @@ struct batteryParam_st batteryInputAndValidationDetails[MAX_BATTERY_PARAMETERS_T
    }
 };
 
-char messageToBePrintedForBatteryParameterValidation[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED][100] =
+char messageToBePrinted[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED][100] =
 {
   "Battery parameter under test is Temperature",
   "Battery parameter under test is State Of Charge (SOC)",
