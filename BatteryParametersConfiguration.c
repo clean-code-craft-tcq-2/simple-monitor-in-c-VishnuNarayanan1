@@ -30,3 +30,5 @@ char MessageToBePrinted[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED][100] =
   "Battery parameter under test is State Of Charge (SOC)",
   "Battery parameter under test is Charge rate"
 };
+
+enum languages LanguageChoosen = English;
