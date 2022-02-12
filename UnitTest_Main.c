@@ -31,39 +31,39 @@ void PrintMessageOnConsoleWithBreachLevel_Stub(char messageToBePrinted[], float 
 int main()
 {
    // Test if temperature, SOC and charge rate are within permissible range
-   Test_BatteryStatus(25,50,0.5,0,0,4); 
+   Test_BatteryStatus(25,50,0.5,0,0,3); 
    // Test if temperature, SOC and charge rate all are exactly in the upper boundary of the permissible range 
-   Test_BatteryStatus(45,80,0.8,0,0,8);
+   Test_BatteryStatus(45,80,0.8,0,0,6);
    // Test if temperature, SOC and charge rate all are exactly in the lower boundary of the permissible range 
-   Test_BatteryStatus(0,20,0.2,0,0,12);
+   Test_BatteryStatus(0,20,0.2,0,0,9);
    // Test if temperature is below the lower boundary of the permissible range , SOC and charge rate are within permissible range
-   Test_BatteryStatus(-10,20,0.5,1,1,16);
+   Test_BatteryStatus(-10,20,0.5,1,1,12);
    // Test if SOC is below the lower boundary of the permissible range , temperature and charge rate are within permissible range
-   Test_BatteryStatus(25,10,0.5,1,2,20);
+   Test_BatteryStatus(25,10,0.5,1,2,15);
    // Test if charge rate is below the lower boundary of the permissible range , temperature and SOC are within permissible range
-   Test_BatteryStatus(25,50,0.1,1,3,24);
+   Test_BatteryStatus(25,50,0.1,1,3,18);
     // Test if temperature and SOC are below the lower boundary of the permissible range , charge rate is within permissible range
-   Test_BatteryStatus(-20,-10,0.5,1,5,28);
+   Test_BatteryStatus(-20,-10,0.5,1,5,21);
    // Test if SOC and charge rate are below the lower boundary of the permissible range , temperature is within permissible range
-   Test_BatteryStatus(25,-10,0,1,7,32);
+   Test_BatteryStatus(25,-10,0,1,7,24);
     // Test if temperature and charge rate are below the lower boundary of the permissible range , SOC is within permissible range
-   Test_BatteryStatus(-1,50,-1,1,9,36);
+   Test_BatteryStatus(-1,50,-1,1,9,27);
     // Test if temperature, SOC and charge rate all are below the lower boundary of the permissible range
-   Test_BatteryStatus(0,0,0,1,11,40);
+   Test_BatteryStatus(0,0,0,1,11,30);
      // Test if temperature is above the upper boundary of the permissible range , SOC and charge rate are within permissible range
-   Test_BatteryStatus(46,50,0.5,1,12,44);
+   Test_BatteryStatus(46,50,0.5,1,12,33);
    // Test if SOC is above the upper boundary of the permissible range , temperature and charge rate are within permissible range
-   Test_BatteryStatus(25,81,0.5,1,13,48);
+   Test_BatteryStatus(25,81,0.5,1,13,36);
    // Test if charge rate is above the upper boundary of the permissible range , temperature and SOC are within permissible range
-   Test_BatteryStatus(25,50,0.9,1,14,52);
+   Test_BatteryStatus(25,50,0.9,1,14,39);
     // Test if temperature and SOC are above the upper boundary of the permissible range , charge rate is within permissible range
-   Test_BatteryStatus(100,100,0.5,1,16,56);
+   Test_BatteryStatus(100,100,0.5,1,16,42);
    // Test if SOC and charge rate are above the upper boundary of the permissible range , temperature is within permissible range
-   Test_BatteryStatus(25,100,100,1,18,60);
+   Test_BatteryStatus(25,100,100,1,18,45);
     // Test if temperature and charge rate are above the upper boundary of the permissible range , SOC is within permissible range
-   Test_BatteryStatus(200,50,10,1,20,64);
+   Test_BatteryStatus(200,50,10,1,20,48);
     // Test if temperature, SOC and charge rate all are upper the lower boundary of the permissible range
-   Test_BatteryStatus(100,100,100,1,23,68);
+   Test_BatteryStatus(100,100,100,1,23,51);
 }
 
 void Test_BatteryStatus(float temperature, float SOC , float ChargeRate, int batteryStatusToAssert, int NumOfPrintMessagesWithBreachToAssert, int NumOfPrintMessagesToAssert)
@@ -74,10 +74,10 @@ void Test_BatteryStatus(float temperature, float SOC , float ChargeRate, int bat
   SOCFromSensorMock = SOC;
   ChargeRateFromSensorMock = ChargeRate;
   batteryStatus = CheckBatteryStatus(Fn_Ptr_PrintMessageOnConsoleWithBreachLevel);
-  printf("\n%d",Test_PrintOnConsoleWithBreachLevel);
-  printf("\n%d",Test_PrintOnConsole);
- /* assert(batteryStatus == batteryStatusToAssert);
+ // printf("\n%d",Test_PrintOnConsoleWithBreachLevel);
+ // printf("\n%d",Test_PrintOnConsole);
+  assert(batteryStatus == batteryStatusToAssert);
   assert(NumOfPrintMessagesWithBreachToAssert == Test_PrintOnConsoleWithBreachLevel);
-  assert(NumOfPrintMessagesToAssert == Test_PrintOnConsole); */
+  assert(NumOfPrintMessagesToAssert == Test_PrintOnConsole); 
 }
 #endif
