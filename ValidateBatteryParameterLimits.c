@@ -1,29 +1,29 @@
 #include <stdio.h>
 #include "ValidateBatteryParameterLimits.h"
 
-int ValidateIfBatteryParameterValueIsLessThanMinOperatingLimit(float minOperatingLimitOfBatteryParameter,  float batteryParameterValue, void (*Fn_Ptr)(char[],float))
+int ValidateBatteryParamMinLimit(float minLimitOfBatteryParameter,  float batteryParameterValue, void (*Fn_Ptr)(char[],float))
 {
    int batteryParameterIsInSafeState = 1;
    float ParameterBreachLevel;
    char breachMessage[75] = "Battery parameter under test is less than minimum threshold limit by ";
-   if(batteryParameterValue < minOperatingLimitOfBatteryParameter)
+   if(batteryParameterValue < minLimitOfBatteryParameter)
    {
      batteryParameterIsInSafeState = 0;
-     ParameterBreachLevel =  (minOperatingLimitOfBatteryParameter - batteryParameterValue);
+     ParameterBreachLevel =  (minLimitOfBatteryParameter - batteryParameterValue);
      Fn_Ptr(breachMessage,ParameterBreachLevel);
    }
    return (batteryParameterIsInSafeState);
 }
 
-int ValidateIfBatteryParameterValueIsGreaterThanMaxOperatingLimit(float maxOperatingLimitOfBatteryParameter,  float batteryParameterValue, void (*Fn_Ptr)(char[],float))
+int ValidateBatteryParamMaxLimit(float maxLimitOfBatteryParameter,  float batteryParameterValue, void (*Fn_Ptr)(char[],float))
 {
    int batteryParameterIsInSafeState = 1;
    float ParameterBreachLevel;
    char breachMessage[75] = "Battery parameter under test is greater than maximum threshold limit by ";
-   if(batteryParameterValue > maxOperatingLimitOfBatteryParameter)
+   if(batteryParameterValue > maxLimitOfBatteryParameter)
    {
      batteryParameterIsInSafeState = 0;
-      ParameterBreachLevel = (batteryParameterValue - maxOperatingLimitOfBatteryParameter);
+      ParameterBreachLevel = (batteryParameterValue - maxLimitOfBatteryParameter);
       Fn_Ptr(breachMessage,ParameterBreachLevel);
    }
    return (batteryParameterIsInSafeState);
