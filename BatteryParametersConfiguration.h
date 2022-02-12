@@ -33,5 +33,5 @@ enum languages
   MAX_POSSIBLE_LANGUAGES
 };
 extern struct BatteryParam_st BatteryParamInfo[];
-extern char MessageToBePrinted[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED][100];
+extern char MessageToBePrinted[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED][MAX_POSSIBLE_LANGUAGES];
 extern enum languages LanguageChoosen;
