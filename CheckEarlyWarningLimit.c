@@ -2,5 +2,5 @@
 
 float ReturnToleranceLimit(float tolerancePercentage,  float batteryParameterValue)
 {
-  return (batteryParameterValue * tolerancePercentage * 0.01)
+  return (batteryParameterValue * tolerancePercentage * 0.01);
 }
