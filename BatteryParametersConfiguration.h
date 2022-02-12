@@ -15,16 +15,16 @@
 #define TOLERANCE_WARNING_REQUIRED                        (true)
 #define TOLERANCE_WARNING_NOT_REQUIRED                    (false)
 
-typedef float (*Fn_Ptr_ReadBatteryParameters)(void);
+typedef float (*FnPtrReadBatteryParam)(void);
 
-struct batteryParam_st 
+struct BatteryParam_st 
 {
   float MinimumThreshold;
   float MaximumThreshold;
   float ToleranceLimit;
   bool ToleranceWarningRequiredOrNot;
-  Fn_Ptr_ReadBatteryParameters ReadBatteryParameters;  
+  FnPtr_eadBatteryParam ReadBatteryParameters;  
 };
 
-extern struct batteryParam_st batteryParamInfo[];
-extern char messageToBePrinted[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED][100];
+extern struct BatteryParam_st BatteryParamInfo[];
+extern char MessageToBePrinted[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED][100];
