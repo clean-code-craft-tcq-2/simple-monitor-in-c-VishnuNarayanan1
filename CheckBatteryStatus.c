@@ -13,7 +13,7 @@ int CheckBatteryStatus(void (*FnPtrPrintMsgOnConsoleWithBreachLevel)(char[], flo
   while(batteryParameter < MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED)
   {
     strcpy(messageToBePrintedOnConsole, MessageToBePrinted[batteryParameter]);
-    valueRead = BatteryParamInfo[batteryParametersUnderTest].ReadBatteryParameters();
+    valueRead = BatteryParamInfo[batteryParameter].ReadBatteryParameters();
     batteryStatus = CheckBatteryParameterLimits(messageToBePrintedOnConsole, valueRead, BatteryParamInfo[batteryParameter].MinimumThreshold,
                                                 BatteryParamInfo[batteryParameter].MaximumThreshold,Fn_Ptr_PrintMessageOnConsoleWithBreachLevel);
     OverallbatteryStatus = (OverallbatteryStatus | batteryStatus);
