@@ -1,3 +1,5 @@
+#include <stdbool.h>
+
 #define UNIT_TEST_ENVIRONMENT
 #define MIN_THRESHOLD_LIMIT_BATTERY_TEMPERATURE           (0)
 #define MAX_THRESHOLD_LIMIT_BATTERY_TEMPERATURE           (45)
