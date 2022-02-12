@@ -9,8 +9,8 @@ int CheckBatteryToleranceLimits(int batteryParam,char message[],float measuredBa
   char toleranceMessageMin[75] = "Battery parameter under test is less than minimum tolerance limit by ";
   char toleranceMessageMax[75] = "Battery parameter under test is greater than maximum tolerance limit by ";
   toleranceValue = ReturnToleranceLimit(toleranceLimit,maxLimit);
-    if((BatteryParamInfo[batteryParam].ToleranceWarningRequiredOrNot == TOLERANCE_WARNING_REQUIRED)
-      && ValidateBatteryParamMinLimit((minLimit + toleranceValue), measuredBatteryParam, toleranceMessageMin, Fn_Ptr_PrintMessageWithBreachLevel) 
+   // if((BatteryParamInfo[batteryParam].ToleranceWarningRequiredOrNot == TOLERANCE_WARNING_REQUIRED)
+    if(ValidateBatteryParamMinLimit((minLimit + toleranceValue), measuredBatteryParam, toleranceMessageMin, Fn_Ptr_PrintMessageWithBreachLevel) 
     && ValidateBatteryParamMaxLimit((maxLimit - toleranceValue), measuredBatteryParam, toleranceMessageMax, Fn_Ptr_PrintMessageWithBreachLevel))
   {
   }
