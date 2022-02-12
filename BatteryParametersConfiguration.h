@@ -26,5 +26,5 @@ struct batteryParam_st
   Fn_Ptr_ReadBatteryParameters ReadBatteryParameters;  
 };
 
-extern struct batteryParam_st batteryInputAndValidationDetails[];
-extern char messageToBePrintedForBatteryParameterValidation[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED][100];
+extern struct batteryParam_st batteryParamInfo[];
+extern char messageToBePrinted[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED][100];
