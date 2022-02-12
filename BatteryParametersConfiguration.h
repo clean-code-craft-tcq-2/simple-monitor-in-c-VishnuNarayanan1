@@ -26,7 +26,7 @@ struct BatteryParam_st
   FnPtrReadBatteryParam ReadBatteryParameters;  
 };
 
-enum languages =
+enum languages
 {
   English,
   German,
