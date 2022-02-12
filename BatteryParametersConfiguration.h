@@ -19,8 +19,8 @@ typedef float (*Fn_Ptr_ReadBatteryParameters)(void);
 
 struct batteryParam_st 
 {
-  float MinimumThresholdLimit;
-  float MaximumThresholdLimit;
+  float MinimumThreshold;
+  float MaximumThreshold;
   float ToleranceLimit;
   bool ToleranceWarningRequiredOrNot;
   Fn_Ptr_ReadBatteryParameters ReadBatteryParameters;  
