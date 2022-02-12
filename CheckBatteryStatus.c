@@ -10,7 +10,7 @@ int CheckBatteryStatus(void (*Fn_Ptr_PrintMessageOnConsoleWithBreachLevel)(char[
   char successMessage[75] = "Battery status is safe !!!";
   char failureMessage[75] = "Battery status is unsafe, call service person !!!";
   char messageToBePrintedOnConsole[100];
-  while(batteryParametersUnderTest < MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED)
+  while(batteryParameter < MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED)
   {
     strcpy(messageToBePrintedOnConsole, messageToBePrinted[batteryParameter]);
     valueRead = batteryParamInfo[batteryParametersUnderTest].ReadBatteryParameters();
