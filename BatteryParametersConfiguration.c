@@ -24,11 +24,9 @@ struct BatteryParam_st BatteryParamInfo[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED] 
    }
 };
 
-char MessageToBePrinted[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED][MAX_POSSIBLE_LANGUAGES] =
-{
-  "Battery parameter under test is Temperature", "Der zu testende Batterieparameter ist Temperatur"
-  "Battery parameter under test is State Of Charge (SOC)", "Der zu testende Batterieparameter ist der Ladezustand (SOC)"
-  "Battery parameter under test is Charge rate", "Der zu testende Batterieparameter ist die Laderate"
-};
+char MessageToBePrinted[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED * MAX_POSSIBLE_LANGUAGES][100] =
+{"Battery parameter under test is Temperature", "Der zu testende Batterieparameter ist Temperatur",
+"Battery parameter under test is State Of Charge (SOC)", "Der zu testende Batterieparameter ist der Ladezustand (SOC)",
+"Battery parameter under test is Charge rate", "Der zu testende Batterieparameter ist die Laderate"};
 
 enum languages LanguageChoosen = English;
