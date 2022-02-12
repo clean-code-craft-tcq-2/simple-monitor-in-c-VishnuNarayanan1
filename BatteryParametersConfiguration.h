@@ -26,5 +26,11 @@ struct BatteryParam_st
   FnPtrReadBatteryParam ReadBatteryParameters;  
 };
 
+enum languages =
+{
+  English,
+  German
+};
 extern struct BatteryParam_st BatteryParamInfo[];
 extern char MessageToBePrinted[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED][100];
+extern enum languages LanguageChoosen;
