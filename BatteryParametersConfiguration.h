@@ -10,8 +10,8 @@
 #define MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED            (3)
 #define TOLERANCE_PERCENTAGE_LIMIT_BATTERY_CHARGE_RATE    (0xffffff)
 #define BREACH_LEVEL_NEED_NOT_BE_PRINTED                  (0xffffff)
-#define TOLERANCE_WARNING_REQUIRED                        (1)
-#define TOLERANCE_WARNING_NOT_REQUIRED                    (0)
+#define TOLERANCE_WARNING_REQUIRED                        (true)
+#define TOLERANCE_WARNING_NOT_REQUIRED                    (false)
 
 typedef float (*Fn_Ptr_ReadBatteryParameters)(void);
 
