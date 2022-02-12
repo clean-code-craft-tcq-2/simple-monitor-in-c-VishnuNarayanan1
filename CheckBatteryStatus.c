@@ -15,17 +15,17 @@ int CheckBatteryStatus(void (*FnPtrPrintMsgOnConsoleWithBreachLevel)(char[], flo
     strcpy(messageToBePrintedOnConsole, MessageToBePrinted[batteryParameter]);
     valueRead = BatteryParamInfo[batteryParameter].ReadBatteryParameters();
     batteryStatus = CheckBatteryParameterLimits(messageToBePrintedOnConsole, valueRead, BatteryParamInfo[batteryParameter].MinimumThreshold,
-                                                BatteryParamInfo[batteryParameter].MaximumThreshold,Fn_Ptr_PrintMessageOnConsoleWithBreachLevel);
+                                                BatteryParamInfo[batteryParameter].MaximumThreshold,FnPtrPrintMsgOnConsoleWithBreachLevel);
     OverallbatteryStatus = (OverallbatteryStatus | batteryStatus);
     batteryParameter++;
   }
   if(OverallbatteryStatus)
   {
-     Fn_Ptr_PrintMessageOnConsoleWithBreachLevel(failureMessage,BREACH_LEVEL_NEED_NOT_BE_PRINTED);
+     FnPtrPrintMsgOnConsoleWithBreachLevel(failureMessage,BREACH_LEVEL_NEED_NOT_BE_PRINTED);
   }
   else
   {
-      Fn_Ptr_PrintMessageOnConsoleWithBreachLevel(successMessage,BREACH_LEVEL_NEED_NOT_BE_PRINTED);
+     FnPtrPrintMsgOnConsoleWithBreachLevel(successMessage,BREACH_LEVEL_NEED_NOT_BE_PRINTED);
   }
   return OverallbatteryStatus;
 }
