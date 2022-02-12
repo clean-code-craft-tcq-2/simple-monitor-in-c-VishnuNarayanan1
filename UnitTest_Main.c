@@ -74,8 +74,8 @@ void Test_BatteryStatus(float temperature, float SOC , float ChargeRate, int bat
   SOCFromSensorMock = SOC;
   ChargeRateFromSensorMock = ChargeRate;
   batteryStatus = CheckBatteryStatus(Fn_Ptr_PrintMessageOnConsoleWithBreachLevel);
-  //assert(batteryStatus == batteryStatusToAssert);
-  //assert(NumOfPrintMessagesWithBreachToAssert == Test_PrintOnConsoleWithBreachLevel);
- // assert(NumOfPrintMessagesToAssert == Test_PrintOnConsole);
+  assert(batteryStatus == batteryStatusToAssert);
+  assert(NumOfPrintMessagesWithBreachToAssert == Test_PrintOnConsoleWithBreachLevel);
+  assert(NumOfPrintMessagesToAssert == Test_PrintOnConsole);
 }
 #endif
