@@ -23,7 +23,7 @@ struct BatteryParam_st
   float MaximumThreshold;
   float ToleranceLimit;
   bool ToleranceWarningRequiredOrNot;
-  FnPtr_eadBatteryParam ReadBatteryParameters;  
+  FnPtrReadBatteryParam ReadBatteryParameters;  
 };
 
 extern struct BatteryParam_st BatteryParamInfo[];
