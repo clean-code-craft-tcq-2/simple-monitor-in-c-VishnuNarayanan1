@@ -8,8 +8,8 @@ int CheckBatteryParameterLimits(char message[],float measuredTemperatureValueUnd
 {
   int batteryParameterStatus = 1;
   Fn_Ptr_PrintMessageWithBreachLevel(message,BREACH_LEVEL_NEED_NOT_BE_PRINTED);
-  if(ValidateIfBatteryParameterValueIsLessThanMinOperatingLimit(minLimit,measuredTemperatureValueUnderTest,Fn_Ptr_PrintMessageWithBreachLevel) 
-    && ValidateIfBatteryParameterValueIsGreaterThanMaxOperatingLimit(maxLimit,measuredTemperatureValueUnderTest,Fn_Ptr_PrintMessageWithBreachLevel))
+  if(ValidateBatteryParamMinLimit(minLimit,measuredTemperatureValueUnderTest,Fn_Ptr_PrintMessageWithBreachLevel) 
+    && ValidateBatteryParamMaxLimit(maxLimit,measuredTemperatureValueUnderTest,Fn_Ptr_PrintMessageWithBreachLevel))
   {
     batteryParameterStatus = 0;
   }
