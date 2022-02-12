@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "BatteryParametersConfiguration.h"
 #include "BatteryParametersUnderTest.h"
+#include "CheckToleranceLimit.h"
 
 int CheckBatteryStatus(void (*FnPtrPrintMsgOnConsoleWithBreachLevel)(char[], float))
 {
