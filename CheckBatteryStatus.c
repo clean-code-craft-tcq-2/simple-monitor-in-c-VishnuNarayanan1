@@ -14,7 +14,7 @@ int CheckBatteryStatus(void (*FnPtrPrintMsgOnConsoleWithBreachLevel)(char[], flo
     if(BatteryParamInfo[batteryParameter].ToleranceWarningRequiredOrNot == TOLERANCE_WARNING_REQUIRED)
     {
       CheckBatteryToleranceLimits(MessageToBePrinted[batteryParameter], valueRead, BatteryParamInfo[batteryParameter].MinimumThreshold,
-                                   BatteryParamInfo[batteryParameter].MaximumThreshold,FnPtrPrintMsgOnConsoleWithBreachLevel);
+                                   BatteryParamInfo[batteryParameter].MaximumThreshold,BatteryParamInfo[batteryParameter].ToleranceLimit ,FnPtrPrintMsgOnConsoleWithBreachLevel);
     }
     batteryStatus = CheckBatteryParameterLimits(MessageToBePrinted[batteryParameter], valueRead, BatteryParamInfo[batteryParameter].MinimumThreshold,
                                                 BatteryParamInfo[batteryParameter].MaximumThreshold,FnPtrPrintMsgOnConsoleWithBreachLevel);
