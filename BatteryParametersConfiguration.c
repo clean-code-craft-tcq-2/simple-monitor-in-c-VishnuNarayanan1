@@ -29,4 +29,4 @@ char MessageToBePrinted[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED * MAX_POSSIBLE_LA
 "Battery parameter under test is State Of Charge (SOC)", "Der zu testende Batterieparameter ist der Ladezustand (SOC)",
 "Battery parameter under test is Charge rate", "Der zu testende Batterieparameter ist die Laderate"};
 
-enum languages LanguageChoosen = English;
+enum languages LanguageChoosen = German;
