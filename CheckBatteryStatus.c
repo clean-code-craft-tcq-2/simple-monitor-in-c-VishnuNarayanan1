@@ -6,18 +6,18 @@
 int CheckBatteryStatus(void (*Fn_Ptr_PrintMessageOnConsoleWithBreachLevel)(char[], float))
 {
   float valueRead;
-  int batteryParametersUnderTest = 0, OverallbatteryStatus = 0, batteryStatus = 0;
+  int batteryParameter = 0, OverallbatteryStatus = 0, batteryStatus = 0;
   char successMessage[75] = "Battery status is safe !!!";
   char failureMessage[75] = "Battery status is unsafe, call service person !!!";
   char messageToBePrintedOnConsole[100];
   while(batteryParametersUnderTest < MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED)
   {
-    strcpy(messageToBePrintedOnConsole, messageToBePrinted[batteryParametersUnderTest]);
-    valueRead = batteryInputAndValidationDetails[batteryParametersUnderTest].ReadBatteryParameters();
-    batteryStatus = CheckBatteryParameterLimits(messageToBePrintedOnConsole, valueRead, batteryParamInfo[batteryParametersUnderTest].MinimumThresholdLimit,
-                                                batteryParamInfo[batteryParametersUnderTest].MaximumThresholdLimit,Fn_Ptr_PrintMessageOnConsoleWithBreachLevel);
+    strcpy(messageToBePrintedOnConsole, messageToBePrinted[batteryParameter]);
+    valueRead = batteryParamInfo[batteryParametersUnderTest].ReadBatteryParameters();
+    batteryStatus = CheckBatteryParameterLimits(messageToBePrintedOnConsole, valueRead, batteryParamInfo[batteryParameter].MinimumThreshold,
+                                                batteryParamInfo[batteryParameter].MaximumThreshold,Fn_Ptr_PrintMessageOnConsoleWithBreachLevel);
     OverallbatteryStatus = (OverallbatteryStatus | batteryStatus);
-    batteryParametersUnderTest++;
+    batteryParameter++;
   }
   if(OverallbatteryStatus)
   {
