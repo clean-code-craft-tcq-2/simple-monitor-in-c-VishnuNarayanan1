@@ -3,7 +3,7 @@
 #include "BatteryParametersConfiguration.h"
 #include "BatteryParametersUnderTest.h"
 
-int CheckBatteryStatus(void (*Fn_Ptr_PrintMessageOnConsoleWithBreachLevel)(char[], float))
+int CheckBatteryStatus(void (*FnPtrPrintMsgOnConsoleWithBreachLevel)(char[], float))
 {
   float valueRead;
   int batteryParameter = 0, OverallbatteryStatus = 0, batteryStatus = 0;
@@ -12,10 +12,10 @@ int CheckBatteryStatus(void (*Fn_Ptr_PrintMessageOnConsoleWithBreachLevel)(char[
   char messageToBePrintedOnConsole[100];
   while(batteryParameter < MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED)
   {
-    strcpy(messageToBePrintedOnConsole, messageToBePrinted[batteryParameter]);
-    valueRead = batteryParamInfo[batteryParametersUnderTest].ReadBatteryParameters();
-    batteryStatus = CheckBatteryParameterLimits(messageToBePrintedOnConsole, valueRead, batteryParamInfo[batteryParameter].MinimumThreshold,
-                                                batteryParamInfo[batteryParameter].MaximumThreshold,Fn_Ptr_PrintMessageOnConsoleWithBreachLevel);
+    strcpy(messageToBePrintedOnConsole, MessageToBePrinted[batteryParameter]);
+    valueRead = BatteryParamInfo[batteryParametersUnderTest].ReadBatteryParameters();
+    batteryStatus = CheckBatteryParameterLimits(messageToBePrintedOnConsole, valueRead, BatteryParamInfo[batteryParameter].MinimumThreshold,
+                                                BatteryParamInfo[batteryParameter].MaximumThreshold,Fn_Ptr_PrintMessageOnConsoleWithBreachLevel);
     OverallbatteryStatus = (OverallbatteryStatus | batteryStatus);
     batteryParameter++;
   }
