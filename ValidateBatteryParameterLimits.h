@@ -1,2 +1,2 @@
-int ValidateIfBatteryParameterValueIsLessThanMinOperatingLimit(float minOperatingLimitOfBatteryParameter,  float batteryParameterValue, void (*Fn_Ptr)(char[],float));
-int ValidateIfBatteryParameterValueIsGreaterThanMaxOperatingLimit(float maxOperatingLimitOfBatteryParameter,  float batteryParameterValue, void (*Fn_Ptr)(char[],float));
+int ValidateBatteryParamMinLimit(float minLimitOfBatteryParameter,  float batteryParameterValue, void (*Fn_Ptr)(char[],float));
+int ValidateBatteryParamMaxLimit(float maxLimitOfBatteryParameter,  float batteryParameterValue, void (*Fn_Ptr)(char[],float));
