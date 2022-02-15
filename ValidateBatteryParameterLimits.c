@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "BatteryParametersConfiguration.h"
 #include "ValidateBatteryParameterLimits.h"
 
 int ValidateBatteryParamMinLimit(float minLimitOfBatteryParameter,  float batteryParameterValue, char messageToPrint[], void (*Fn_Ptr)(char[],float))
