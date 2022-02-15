@@ -2,7 +2,7 @@
 #include "ParametersReadFromSensor.h"
 #include "BatteryParametersUnderTest.h"
 
-InputValues_st ReadBatteryParameters[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED] = 
+struct InputValues_st ReadBatteryParameters[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED] = 
 {
   .readInputValues = &ReadBatteryTemperature,
   .readInputValues = &ReadBatteryStateOfCharge,
