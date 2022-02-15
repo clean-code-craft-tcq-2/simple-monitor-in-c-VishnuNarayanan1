@@ -16,7 +16,9 @@ struct ValueLimits_st
   float MaxLimit;
   float Value; 
 };
-typedef ValueLimits_st (*FnPtrReadBatteryParam)(void);
+
+extern struct ValueLimits_st valLimit;
+typedef valLimit (*FnPtrReadBatteryParam)(void);
 
 struct InputValues_st
 {
