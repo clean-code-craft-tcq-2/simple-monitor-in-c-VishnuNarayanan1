@@ -4,13 +4,13 @@
 
 int CheckBatteryStatus(void (*FnPtrPrintMsgOnConsoleWithBreachLevel)(char[], float))
 {
-  ValueLimits_st valueLimits;
+  ValueLimits_st paramValues;
   int batteryParameter = 0, OverallbatteryStatus = 0, batteryStatus = 0;
   while(batteryParameter < MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED)
   {
-    valueLimits = ReadBatteryParameters[batteryParameter].FnPtrReadBatteryParam ();
-    batteryStatus = CheckBatteryParameterLimits(MessageToBePrinted[(batteryParameter * MAX_POSSIBLE_LANGUAGES) + LanguageChoosen], valueLimits.Value, valueLimits.MinLimit,
-                                                valueLimits.MaxLimit,FnPtrPrintMsgOnConsoleWithBreachLevel);
+    paramValues = ReadBatteryParameters[batteryParameter].FnPtrReadBatteryParam ();
+    batteryStatus = CheckBatteryParameterLimits(MessageToBePrinted[(batteryParameter * MAX_POSSIBLE_LANGUAGES) + LanguageChoosen], paramValues.Value, paramValues.MinLimit,
+                                                paramValues.MaxLimit,FnPtrPrintMsgOnConsoleWithBreachLevel);
     OverallbatteryStatus = (OverallbatteryStatus | batteryStatus);
     batteryParameter++;
   }
