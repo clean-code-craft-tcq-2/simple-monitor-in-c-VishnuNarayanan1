@@ -30,7 +30,7 @@ void PrintMessageOnConsoleWithBreachLevel_Stub(char messageToBePrinted[], float 
 
 int main()
 {
-    printf("\n-------Language : English  , Temperature unit : Celcius--------------------------\n");
+    printf("\n\n-------Language : English  , Temperature unit : Celcius--------------------------\n\n");
   LanguageChoosen = English;
   tempUnit  = Celcius;
    // Test if temperature, SOC and charge rate are within permissible range
@@ -68,7 +68,7 @@ int main()
     // Test if temperature, SOC and charge rate all are upper the lower boundary of the permissible range
    Test_BatteryStatus(100,100,100,1,23,51);
   
-   printf("\n-------Language : German  , Temperature unit : Farenheit--------------------------\n");
+   printf("\n\n-------Language : German  , Temperature unit : Farenheit--------------------------\n\n");
    LanguageChoosen = German;
    tempUnit = Farenheit;
    // Test if temperature, SOC and charge rate are within permissible range
@@ -103,9 +103,6 @@ void Test_BatteryStatus(float temperature, float SOC , float ChargeRate, int bat
   SOCFromSensorMock = SOC;
   ChargeRateFromSensorMock = ChargeRate;
   batteryStatus = CheckBatteryStatus(Fn_Ptr_PrintMessageOnConsoleWithBreachLevel);
-  printf("\n%d",batteryStatus);
-   printf("\n%d",Test_PrintOnConsoleWithBreachLevel);
-   printf("\n%d",Test_PrintOnConsole);
   assert(batteryStatus == batteryStatusToAssert);
   assert(NumOfPrintMessagesWithBreachToAssert == Test_PrintOnConsoleWithBreachLevel);
   assert(NumOfPrintMessagesToAssert == Test_PrintOnConsole); 
