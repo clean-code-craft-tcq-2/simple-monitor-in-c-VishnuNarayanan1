@@ -1,7 +1,4 @@
-float ReadBatteryTemperature(void);
-float ReadBatteryStateOfCharge(void);
-float ReadBateryChargeRate(void);
-
-extern float TemperatureFromSensorMock;
-extern float SOCFromSensorMock;
-extern float ChargeRateFromSensorMock;
+ValueLimits_st ReadBatteryTemperature(void);
+ValueLimits_st ReadBatteryStateOfCharge(void)'
+ValueLimits_st ReadBateryChargeRate(void);
+float ConvertCelciusToFarenheit(float farenheit);
