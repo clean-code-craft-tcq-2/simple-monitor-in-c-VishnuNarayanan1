@@ -35,3 +35,4 @@ char BreachMessage[2 * MAX_POSSIBLE_LANGUAGES][100] =
  "Battery parameter under test is greater than maximum threshold limit by ","Der zu testende Batterieparameter ist größer als der maximale Schwellenwert um"};
 
 enum languages LanguageChoosen = German;
+enum temperatureUnit tempUnit = Farenheit;
