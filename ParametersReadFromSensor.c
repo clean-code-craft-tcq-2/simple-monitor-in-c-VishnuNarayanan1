@@ -8,7 +8,7 @@ float ChargeRateFromSensorMock;
 
 ValueLimits ReadBatteryTemperature(void)
 {
-  struct ValueLimits tempLimits;
+  ValueLimits tempLimits;
   if(tempUnit == Farenheit)
   {
     tempLimits.MinLimit = ConvertCelciusToFarenheit(MIN_THRESHOLD_LIMIT_BATTERY_TEMPERATURE);
