@@ -2,6 +2,7 @@
 #include "ParametersReadFromSensor.h"
 #include "BatteryParametersUnderTest.h"
 
+struct ValueLimits_st valLimit;
 struct InputValues_st ReadBatteryParameters[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED] = 
 {
   .readInputValues = &ReadBatteryTemperature,
@@ -20,3 +21,4 @@ char BreachMessage[2 * MAX_POSSIBLE_LANGUAGES][100] =
 
 enum languages LanguageChoosen = German;
 enum temperatureUnit tempUnit = Farenheit;
+
