@@ -1,3 +1,7 @@
+**Choosen for assignment:**
+**Extension 2: Support a language in addition to English
+Extension 3: Accept input in different units**
+
 # Programming Paradigms
 
 Electric Vehicles have BMS - Battery Management Systems
