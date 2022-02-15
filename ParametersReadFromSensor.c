@@ -13,7 +13,7 @@ ValueLimits ReadBatteryTemperature(void)
   {
     tempLimits.MinLimit = ConvertCelciusToFarenheit(MIN_THRESHOLD_LIMIT_BATTERY_TEMPERATURE);
     tempLimits.MaxLimit = ConvertCelciusToFarenheit(MAX_THRESHOLD_LIMIT_BATTERY_TEMPERATURE);
-    tempLimits.Value = ConvertCelciusToFarenheit(TemperatureFromSensorMock);
+    tempLimits.Value = TemperatureFromSensorMock;
   }
   else
   {
