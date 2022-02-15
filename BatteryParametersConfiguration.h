@@ -10,7 +10,7 @@
 #define MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED            (3)
 #define BREACH_LEVEL_NEED_NOT_BE_PRINTED                  (0xffffff)
 
-struct ValueLimits 
+typedef struct ValueLimits 
 {
   float MinLimit;
   float MaxLimit;
