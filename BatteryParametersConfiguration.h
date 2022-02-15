@@ -10,12 +10,12 @@
 #define MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED            (3)
 #define BREACH_LEVEL_NEED_NOT_BE_PRINTED                  (0xffffff)
 
-typedef struct ValueLimits 
+typedef struct ValueLimit_st 
 {
   float MinLimit;
   float MaxLimit;
   float Value; 
-};
+}ValueLimits;
 
 typedef ValueLimits (*FnPtrReadBatteryParam)(void);
 
