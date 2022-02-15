@@ -2,7 +2,7 @@
 #include "ParametersReadFromSensor.h"
 #include "BatteryParametersUnderTest.h"
 
-ValueLimits_st (*FnPtrReadBatteryParam[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED])() = 
+FnPtrReadBatteryParam ReadBatteryParameters[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED] = 
 {
   &ReadBatteryTemperature,&ReadBatteryStateOfCharge,&ReadBateryChargeRate
 };
