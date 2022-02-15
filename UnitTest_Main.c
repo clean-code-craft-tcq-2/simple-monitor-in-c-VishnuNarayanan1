@@ -30,6 +30,7 @@ void PrintMessageOnConsoleWithBreachLevel_Stub(char messageToBePrinted[], float 
 
 int main()
 {
+  tempUnit  = Celcius;
    // Test if temperature, SOC and charge rate are within permissible range
    Test_BatteryStatus(25,50,0.5,0,0,3); 
    // Test if temperature, SOC and charge rate all are exactly in the upper boundary of the permissible range 
