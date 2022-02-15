@@ -37,7 +37,7 @@ enum temperatureUnit
 };
 
 
-extern InputValues_st ReadBatteryParameters[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED];
+extern struct InputValues_st ReadBatteryParameters[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED];
 extern char MessageToBePrinted[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED * MAX_POSSIBLE_LANGUAGES][100];
 extern char BreachMessage[2 * MAX_POSSIBLE_LANGUAGES][100];
 extern enum languages LanguageChoosen;
