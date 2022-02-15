@@ -8,7 +8,7 @@ float ChargeRateFromSensorMock;
 
 ValueLimits_st ReadBatteryTemperature(void)
 {
-  struct ValueLimits_st tempLimits;
+  struct ValueLimits tempLimits;
   if(tempUnit == Farenheit)
   {
     tempLimits.MinLimit = ConvertCelciusToFarenheit(MIN_THRESHOLD_LIMIT_BATTERY_TEMPERATURE);
@@ -26,7 +26,7 @@ ValueLimits_st ReadBatteryTemperature(void)
 
 ValueLimits_st ReadBatteryStateOfCharge(void)
 {
-  struct ValueLimits_st stateOfChargeLimits;
+  struct ValueLimits stateOfChargeLimits;
   stateOfChargeLimits.MinLimit = MIN_THRESHOLD_LIMIT_BATTERY_STATE_OF_CHARGE;
   stateOfChargeLimits.MaxLimit = MAX_THRESHOLD_LIMIT_BATTERY_STATE_OF_CHARGE;
   stateOfChargeLimits.Value = SOCFromSensorMock;
@@ -35,7 +35,7 @@ ValueLimits_st ReadBatteryStateOfCharge(void)
 
 ValueLimits_st ReadBateryChargeRate(void)
 {
-  struct ValueLimits_st chargeRateLimits;
+  struct ValueLimits chargeRateLimits;
   chargeRateLimits.MinLimit = MIN_THRESHOLD_LIMIT_BATTERY_CHARGE_RATE;
   chargeRateLimits.MaxLimit = MAX_THRESHOLD_LIMIT_BATTERY_CHARGE_RATE ;
   chargeRateLimits.Value = ChargeRateFromSensorMock;
