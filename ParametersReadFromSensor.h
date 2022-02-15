@@ -1,6 +1,6 @@
-ValueLimits_st ReadBatteryTemperature(void);
-ValueLimits_st ReadBatteryStateOfCharge(void);
-ValueLimits_st ReadBateryChargeRate(void);
+ValueLimits ReadBatteryTemperature(void);
+ValueLimits ReadBatteryStateOfCharge(void);
+ValueLimits ReadBateryChargeRate(void);
 float ConvertCelciusToFarenheit(float farenheit);
 
 extern float TemperatureFromSensorMock;
