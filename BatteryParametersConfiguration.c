@@ -5,7 +5,7 @@
 FnPtrReadBatteryParam ReadBatteryParameters[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED] =
 {
   &ReadBatteryTemperature,&ReadBatteryStateOfCharge,&ReadBateryChargeRate
-}
+};
 
 char MessageToBePrinted[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED * MAX_POSSIBLE_LANGUAGES][100] =
 {"Battery parameter under test is Temperature", "Der zu testende Batterieparameter ist Temperatur",
