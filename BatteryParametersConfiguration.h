@@ -10,9 +10,6 @@
 #define MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED            (3)
 #define BREACH_LEVEL_NEED_NOT_BE_PRINTED                  (0xffffff)
 
-typedef float (*FnPtrReadBatteryParam)(void);
-FnPtrReadBatteryParam ReadBatteryParameters[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED];
-
 struct ValueLimits_st 
 {
   float MinLimit;
@@ -32,6 +29,11 @@ enum temperatureUnit
   Celcius,
   Farenheit,
 };
+
+
+typedef ValueLimits_st (*FnPtrReadBatteryParam)(void);
+FnPtrReadBatteryParam ReadBatteryParameters[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED];
+
 extern FnPtrReadBatteryParam ReadBatteryParameters[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED];
 extern char MessageToBePrinted[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED * MAX_POSSIBLE_LANGUAGES][100];
 extern char BreachMessage[2 * MAX_POSSIBLE_LANGUAGES][100];
