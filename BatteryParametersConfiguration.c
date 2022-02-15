@@ -4,9 +4,9 @@
 
 InputValues_st ReadBatteryParameters[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED] = 
 {
-  {.FnPtrReadBatteryParam = &ReadBatteryTemperature},
-  {.FnPtrReadBatteryParam = &ReadBatteryStateOfCharge},
-  {.FnPtrReadBatteryParam = &ReadBateryChargeRate}
+  {.readInputValues = &ReadBatteryTemperature},
+  {.readInputValues = &ReadBatteryStateOfCharge},
+  {.readInputValues = &ReadBateryChargeRate}
 };
 
 char MessageToBePrinted[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED * MAX_POSSIBLE_LANGUAGES][100] =
