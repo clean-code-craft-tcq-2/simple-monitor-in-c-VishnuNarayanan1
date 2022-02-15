@@ -42,7 +42,7 @@ ValueLimits ReadBateryChargeRate(void)
   return chargeRateLimits;
 }
   
-float ConvertCelciusToFarenheit(float farenheit)
+float ConvertCelciusToFarenheit(float celcius)
 {
-    return ((farenheit - 32) * 5 / 9);
+    return ((celcius * 1.8) + 32);
 }
