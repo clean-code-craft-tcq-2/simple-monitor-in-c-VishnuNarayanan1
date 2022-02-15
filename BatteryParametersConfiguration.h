@@ -30,9 +30,8 @@ enum temperatureUnit
   Farenheit,
 };
 
-
 typedef ValueLimits_st (*FnPtrReadBatteryParam)(void);
-FnPtrReadBatteryParam ReadBatteryParameters[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED];
+extern FnPtrReadBatteryParam ReadBatteryParameters[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED];
 
 extern FnPtrReadBatteryParam ReadBatteryParameters[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED];
 extern char MessageToBePrinted[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED * MAX_POSSIBLE_LANGUAGES][100];
