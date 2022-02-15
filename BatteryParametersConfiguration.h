@@ -26,13 +26,27 @@ struct BatteryParam_st
   FnPtrReadBatteryParam ReadBatteryParameters;  
 };
 
+struct ValueLimits_st 
+{
+  float MinLimit;
+  float MaxLimit;
+  float Value; 
+};
+
 enum languages
 {
   English,
   German,
   MAX_POSSIBLE_LANGUAGES
 };
+
+enum temperatureUnit
+{
+  Celcius,
+  Farenheit,
+};
 extern struct BatteryParam_st BatteryParamInfo[];
 extern char MessageToBePrinted[MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED * MAX_POSSIBLE_LANGUAGES][100];
 extern char BreachMessage[2 * MAX_POSSIBLE_LANGUAGES][100];
 extern enum languages LanguageChoosen;
+extern enum temperatureUnit tempUnit;
