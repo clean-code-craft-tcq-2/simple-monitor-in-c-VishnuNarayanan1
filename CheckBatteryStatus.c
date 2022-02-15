@@ -4,7 +4,7 @@
 
 int CheckBatteryStatus(void (*FnPtrPrintMsgOnConsoleWithBreachLevel)(char[], float))
 {
-  ValueLimits_st paramValues;
+  ValueLimits paramValues;
   int batteryParameter = 0, OverallbatteryStatus = 0, batteryStatus = 0;
   while(batteryParameter < MAX_BATTERY_PARAMETERS_TO_BE_VALIDATED)
   {
